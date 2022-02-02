@@ -10,7 +10,7 @@ let port = process.env.PORT || 8000;
 
 
 app.get("/", function(req, res){
-    res.send("Hello", process.env.developer);
+    res.send("Hello" + process.env.developer);
 });
 
 app.listen(port, function(){
