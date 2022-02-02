@@ -1,0 +1,46 @@
+actors Table:
+	CREATE TABLE actors(
+		id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+		first_name VARCHAR (100) NOT NULL,
+		last_name VARCHAR (100) NOT NULL
+	);
+
+
+scripts Table:
+	CREATE TABLE scripts(
+		id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+		FOREIGN KEY (actor_id) REFERENCES actors (id),
+		script_title VARCHAR (100) NOT NULL
+	);
+
+
+playwrights Table:
+	CREATE TABLE scripts(
+		id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+		FOREIGN KEY (actor_id) REFERENCES actors (id),
+		playwright_lastName VARCHAR (100) NOT NULL,
+		playwright_firstName VARCHAR (100) NOT NULL	
+);
+
+
+actorsLibrary Table:
+	CREATE TABLE actorsLibrary(
+		id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+		FOREIGN KEY (actor_id) REFERENCES actors (id),
+		FOREIGN KEY (playwright_id) REFERENCES  playwrights (id),
+		FOREIGN KEY (script_id) REFERENCES scripts (id)
+);
+
+
+scriptScenes Table:
+	CREATE TABLE acriptScenes(
+		id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+		FOREIGN KEY (actor_id) REFERENCES actors (id),
+		FOREIGN KEY (script_id) REFERENCES scripts (id),
+		sceneNumber INT NOT NULL,
+		sceneName VARCHAR (100) NOT NULL,
+		dialogue VARCHAR (10000) NOT NULL,
+		punctuation VARCHAR (1000) NOT NULL,
+		addFirstLetter VARCHAR (10000) NOT NULL,
+		addEveryOtherLetter VARCHAR (10000) NOT NULL
+);
