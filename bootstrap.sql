@@ -1,4 +1,4 @@
-actors Table:
+-- actors Table
 	CREATE TABLE actors(
 		id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
 		username VARCHAR(100) NOT NULL UNIQUE,
@@ -8,7 +8,7 @@ actors Table:
 	);
 
 
-scripts Table:
+-- scripts Table:
 	CREATE TABLE scripts(
 		id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
 		actor_id INT NOT NULL,
@@ -17,7 +17,7 @@ scripts Table:
 	);
 
 
-playwrights Table:
+-- playwrights Table:
 	CREATE TABLE playwrights(
 		id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
 		actor_id INT NOT NULL,
@@ -27,7 +27,7 @@ playwrights Table:
 );
 
 
-actorsLibrary Table:
+-- actorsLibrary Table:
 	CREATE TABLE actorsLibrary(
 		id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
 		actor_id INT NOT NULL,
@@ -36,10 +36,10 @@ actorsLibrary Table:
 		FOREIGN KEY (playwright_id) REFERENCES playwrights (id),
 		script_id INT NOT NULL,
 		FOREIGN KEY (script_id) REFERENCES scripts (id)
-);
+    );
 
 
-scriptScenes Table:
+-- scriptScenes Table:
 	CREATE TABLE scriptScenes(
 		id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
 		actor_id INT NOT NULL,
@@ -48,8 +48,8 @@ scriptScenes Table:
 		FOREIGN KEY (script_id) REFERENCES scripts (id),
 		sceneNumber INT NOT NULL,
 		sceneName VARCHAR (100) NOT NULL,
-		dialogue VARCHAR (1000) NOT NULL,
+		dialogue VARCHAR (10000) NOT NULL,
 		punctuation VARCHAR (1000) NOT NULL,
 		addFirstLetter VARCHAR (1000) NOT NULL,
 		addEveryOtherLetter VARCHAR (1000) NOT NULL
-);
+    );
