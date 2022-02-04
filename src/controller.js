@@ -218,7 +218,6 @@ let addPlaywright = function(req, res) {
             res.sendStatus(202);
         }
     })
-
 }
 
 
