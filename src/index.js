@@ -6,7 +6,9 @@ const app = express();
 
 app.use(express.json());
 
+
 let routes = require("./routes");
+app.use(routes);
 
 
 
@@ -20,3 +22,4 @@ app.get("/", function(req, res){
 app.listen(port, function(){
     console.log("Application listening on port", port);
 })
+
