@@ -92,7 +92,7 @@ let login = function(req, res) {
 
 
     // get the password hash for the username from the database
-    let sql = "select username, password from users where username = ?";
+    let sql = "select username, password from actors where username = ?";
     let params = [username];
 
     let goodPassword = false;
