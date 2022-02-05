@@ -67,7 +67,7 @@ let signup = function(req, res) {
     let hash = bcrypt.hashSync(password, 10);
 
     // store the username and the hash in the database
-    let sql = "insert into actors(usersname, password) values(?, ?);"
+    let sql = "insert into actors(username, password) values(?, ?);"
     let params = [username, hash];
 
     db.query(sql, params, function(err, rows) {
