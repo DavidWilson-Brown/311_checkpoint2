@@ -186,7 +186,7 @@ let addScript = function(req, res) {
     console.log("addScript", req.body);
     let input = req.body;
 
-    let sql = "insert into scripts (script_title) values (?, ?);"
+    let sql = "insert into scripts (id, actor_id, script_title) values (?, ?, ?);"
     let params = [];
     params.push(input.script_title);
     db.query(sql, params, function(error, rows){
