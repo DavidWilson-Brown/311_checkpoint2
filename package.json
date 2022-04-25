@@ -1,7 +1,8 @@
 {
     "name": "311_checkpoint2",
     "scripts": {
-        "start": "node src/index.js"
+        "start": "node src/index.js",
+        "heroku-postbuild":"cd client && npm i && npm run build"
     },
     "main": "src/index.js",
     "dependencies": {
