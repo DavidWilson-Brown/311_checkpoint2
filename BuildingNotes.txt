@@ -1,0 +1,18 @@
+const line = 'Oh no, the building is on fire!'; //get this value from DB
+
+
+const response = {
+    fistLetter: 'O  n , t   b       i   o  f',
+    everyOther: 'O  n , t e  b i d n ',
+    line: line
+}
+
+
+ 
+//function
+
+
+
+
+
+//regex - hard
