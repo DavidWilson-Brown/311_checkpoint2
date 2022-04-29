@@ -2,10 +2,12 @@
     "name": "311_checkpoint2",
     "scripts": {
         "start": "node src/index.js",
-        "heroku-postbuild":"cd client && npm i && npm run build"
+        "heroku-postbuild": "cd client && npm i && npm run build"
     },
     "main": "src/index.js",
     "dependencies": {
+        "@mui/icons-material": "^5.6.2",
+        "axios": "^0.27.2",
         "bcrypt": "^5.0.1",
         "cors": "^2.8.5",
         "dotenv": "^15.0.0",

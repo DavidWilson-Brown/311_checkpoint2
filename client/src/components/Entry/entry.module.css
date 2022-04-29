@@ -1,0 +1,16 @@
+.container {
+    margin: 3% 10%;
+    /* font-family: 'Special Elite', cursive; */
+  }
+  
+  .name {
+    color: black;
+    /* font-family: 'Nixie One', cursive; */
+    font-weight: 600;
+  }
+  
+  .delete {
+    color: red
+  }
+
+ 
