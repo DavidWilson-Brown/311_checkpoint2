@@ -1,5 +1,13 @@
-// const MovieQuotes = require('movie-quotes');
+import MovieQuotes from 'movie-quotes';
 
-// function movieQuotes.random();
+//const MovieQuotes = require('movie-quotes');
+
+function quoteGenerator () {
+    let arr = movieQuotes.all();
+    console.log("movieQuotes:", arr);
+}
+
+quoteGenerator();
+
 
 // export default MovieQuotes;
