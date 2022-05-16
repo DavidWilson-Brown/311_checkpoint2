@@ -28,6 +28,6 @@ export const deleteEntry = (index) => {
 
 
 
-export const fetchMovieQuotes = () => {
-  return 
-}
+// export const fetchMovieQuotes = () => {
+//   return 
+// }

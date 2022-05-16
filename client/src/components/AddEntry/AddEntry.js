@@ -4,10 +4,10 @@ import {
   Button
 } from '@material-ui/core';
 
-import MovieQuotes from '../MovieQuotes/MovieQuotes';
-import styles from './addentry.module.css';
+import Quotes from '../Quotes/Quotes';
+import styles from './addEntry.module.css';
 
-export default function AddEntry({ scripts, addentry }) {
+export default function AddEntry({ scripts, addEntry }) {
   console.log('add entry props:', scripts.length)
 
   const [entry, setEntry] = useState({
@@ -29,7 +29,7 @@ export default function AddEntry({ scripts, addentry }) {
 
     const payload = { ...entry };
     payload.id = scripts.length + 1;
-    addentry(payload);
+    addEntry(payload);
 
     setEntry({
       title: "",
@@ -79,7 +79,7 @@ export default function AddEntry({ scripts, addentry }) {
           Save</Button>
         </form>
       </div>
-      <div className={styles.movieContainer}>
+      <div className={styles.quoteContainer}>
       </div>
     </div>
   )
