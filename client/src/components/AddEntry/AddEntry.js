@@ -4,7 +4,7 @@ import {
   Button
 } from '@material-ui/core';
 
-import Quotes from '../Quotes/Quotes';
+import Quotable from '../Quotable/Quotable';
 import styles from './addEntry.module.css';
 
 export default function AddEntry({ scripts, addEntry }) {
@@ -80,6 +80,7 @@ export default function AddEntry({ scripts, addEntry }) {
         </form>
       </div>
       <div className={styles.quoteContainer}>
+        <Quotable /> 
       </div>
     </div>
   )
