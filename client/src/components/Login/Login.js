@@ -17,8 +17,8 @@ export default function Login({ user, userLogin }) {
   //   setNewUser(newState);
   // }
   
-  const handleLogin = (e) => {
-    e.preventDefault();
+  const handleLogin = (event) => {
+    event.preventDefault();
 
     // const payload = { ...newUser };
     // userLogin(payload);

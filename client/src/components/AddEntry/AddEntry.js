@@ -4,6 +4,7 @@ import {
   Button
 } from '@material-ui/core';
 
+// import '../MemoryTool/MemoryTool';
 import Quotable from '../Quotable/Quotable';
 import styles from './addEntry.module.css';
 
@@ -45,14 +46,14 @@ export default function AddEntry({ scripts, addEntry }) {
         <form onSubmit={handleSubmit} className={styles.form}>
           <TextField
             name="title"
-            label="Title"
+            label="Title (ex: Death of a Salesman)"
             type="text"
             id="title"
             value={entry.title}
             onChange={handleChange} />
           <TextField
             name="playwright"
-            label="Playwright"
+            label="Playwright (ex: Arthur Miller)"
             type="text"
             id="playwright"
             value={entry.playwright}
@@ -66,7 +67,7 @@ export default function AddEntry({ scripts, addEntry }) {
             onChange={handleChange} />
           <TextField
             name="dialogue"
-            label="Dialogue"
+            label="Dialogue (ex: I'm vital in New England.)"
             type="text" 
             id="dialogue"
             value={entry.dialogue}
@@ -79,6 +80,7 @@ export default function AddEntry({ scripts, addEntry }) {
           Save</Button>
         </form>
       </div>
+      
       <div className={styles.quoteContainer}>
         <Quotable /> 
       </div>

@@ -12,7 +12,7 @@
 	CREATE TABLE scripts(
 		id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
 		actor_id INT NOT NULL,
-		FOREIGN KEY (actor_id) REFERENCES actors (id),
+		-- FOREIGN KEY (actor_id) REFERENCES actors (id),
 		script_title VARCHAR (100) NOT NULL
 	);
 
@@ -21,7 +21,7 @@
 	CREATE TABLE playwrights(
 		id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
 		actor_id INT NOT NULL,
-		FOREIGN KEY (actor_id) REFERENCES actors (id),
+		-- FOREIGN KEY (actor_id) REFERENCES actors (id),
 		playwright_lastName VARCHAR (100) NOT NULL,
 		playwright_firstName VARCHAR (100) NOT NULL	
 );
@@ -31,11 +31,11 @@
 	CREATE TABLE actorsLibrary(
 		id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
 		actor_id INT NOT NULL,
-		FOREIGN KEY (actor_id) REFERENCES actors (id),
+		-- FOREIGN KEY (actor_id) REFERENCES actors (id),
 		playwright_id INT NOT NULL,
-		FOREIGN KEY (playwright_id) REFERENCES playwrights (id),
-		script_id INT NOT NULL,
-		FOREIGN KEY (script_id) REFERENCES scripts (id)
+		-- FOREIGN KEY (playwright_id) REFERENCES playwrights (id),
+		script_id INT NOT NULL
+		-- FOREIGN KEY (script_id) REFERENCES scripts (id)
     );
 
 
@@ -43,9 +43,9 @@
 	CREATE TABLE scriptScenes(
 		id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
 		actor_id INT NOT NULL,
-		FOREIGN KEY (actor_id) REFERENCES actors (id),
+		-- FOREIGN KEY (actor_id) REFERENCES actors (id),
 		script_id INT NOT NULL,
-		FOREIGN KEY (script_id) REFERENCES scripts (id),
+		-- FOREIGN KEY (script_id) REFERENCES scripts (id),
 		sceneNumber INT NOT NULL,
 		sceneName VARCHAR (100) NOT NULL,
 		dialogue VARCHAR (10000) NOT NULL,

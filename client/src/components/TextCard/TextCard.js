@@ -1,4 +1,5 @@
 import React from 'react';
+// import MemoryTool from '../MemoryTool/MemoryTool';
 import styles from './textcard.module.css';
 
 export default function Details(props) {
@@ -13,6 +14,7 @@ export default function Details(props) {
         <h4>{script.character}</h4>
         <p className={styles.dialogue}>{script.dialogue}</p>
       </div>
+      {/* <MemoryTool /> */}
     </div>
   )
 }

@@ -69,7 +69,6 @@ export default function Entry({ scripts, deleteEntry, user }) {
               {cookies.loggedIn ? (
                 <TableCell
                   style={{
-                    color: "light-gray",
                     fontWeight: "bold",
                     fontSize: "13px",
                   }}

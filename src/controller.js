@@ -32,7 +32,8 @@ let getActor = function (req, res) {
 };
 
 let listScripts = function (req, res) {
-  let sql = "select id, actor_id, script_title from scripts";
+  // let sql = "select id, actor_id, script_title from scripts";
+  let sql = "select actor_id, script_title from scripts";
 
   db.query(sql, [], function (error, rows) {
     if (error) {
@@ -46,7 +47,8 @@ let listScripts = function (req, res) {
 
 let getScript = function (req, res) {
   let id = req.params.id;
-  let sql = "select id, actor_id, script_title from scripts where id = ?";
+  // let sql = "select id, actor_id, script_title from scripts where id = ?";
+  let sql = " select actor_id, script_title from scripts where id = ?";
   let params = [];
   params.push(id);
 
@@ -62,8 +64,10 @@ let getScript = function (req, res) {
 };
 
 let listPlaywrights = function (req, res) {
+  // let sql =
+  //   "select id, actor_id, playwright_lastName, playwright_firstName from playwrights";
   let sql =
-    "select id, actor_id, playwright_lastName, playwright_firstName from playwrights";
+    "select actor_id, playwright_lastName, playwright_firstName from playwrights";
   db.query(sql, [], function (error, rows) {
     if (error) {
       console.log("Failed to get playwrights", error);
@@ -75,9 +79,11 @@ let listPlaywrights = function (req, res) {
 };
 
 let getPlaywright = function (req, res) {
-  let id = req.params.id;
+  // let id = req.params.id;
+  // let sql =
+  //   "select id, actor_id, playwright_lastName, playwright_firstName from playwrights where id = ?";
   let sql =
-    "select id, actor_id, playwright_lastName, playwright_firstName from playwrights where id = ?";
+    "select actor_id, playwright_lastName, playwright_firstName from playwrights where id = ?";
   let params = [];
   params.push(id);
 
@@ -93,7 +99,8 @@ let getPlaywright = function (req, res) {
 };
 
 let listActorsLibrary = function (req, res) {
-  let sql = "select id, actor_id, playwright_id, script_id from actorsLibrary";
+  // 
+  let sql = "actor_id, playwright_id, script_id from actorsLibrary";
   db.query(sql, [], function (error, rows) {
     if (error) {
       console.log("Failed to get actorsLibrary", error);
@@ -106,8 +113,10 @@ let listActorsLibrary = function (req, res) {
 
 let getActorsLibrary = function (req, res) {
   let id = req.params.id;
+  // let sql =
+  //   "select id, actor_id, playwright_id, script_id from actorsLibrary where id = ?";
   let sql =
-    "select id, actor_id, playwright_id, script_id from actorsLibrary where id = ?";
+    "select actor_id, playwright_id, script_id from actorsLibrary where id = ?";
   let params = [];
   params.push(id);
 
@@ -123,8 +132,10 @@ let getActorsLibrary = function (req, res) {
 };
 
 let listScriptScenes = function (req, res) {
+  // let sql =
+  //   "select id, actor_id, script_id, sceneNumber, sceneName, dialogue from scriptScenes";
   let sql =
-    "select id, actor_id, script_id, sceneNumber, sceneName, dialogue from scriptScenes";
+    "select actor_id, script_id, sceneNumber, sceneName, dialogue from scriptScenes";
   db.query(sql, [], function (error, rows) {
     if (error) {
       console.log("Failed to get scriptScenes", error);
@@ -136,9 +147,11 @@ let listScriptScenes = function (req, res) {
 };
 
 let getScriptScene = function (req, res) {
-  let id = req.params.id;
+  // let id = req.params.id;
+  // let sql =
+  //   "select id, actor_id, script_id, sceneNumber, sceneName, dialogue from scriptScenes where id = ?";
   let sql =
-    "select id, actor_id, script_id, sceneNumber, sceneName, dialogue from scriptScenes where id = ?";
+    "select actor_id, script_id, sceneNumber, sceneName, dialogue from scriptScenes where id = ?";
   let params = [];
   params.push(id);
 
@@ -179,9 +192,11 @@ let addScript = function (req, res) {
   let input = req.body;
 
   let sql =
-    "insert into scripts (id, actor_id, script_title) values (?, ?, ?);";
+    // "insert into scripts (id, actor_id, script_title) values (?, ?, ?);";
+    "insert into scripts (actor_id, script_title) values (?, ?);";
   let params = [];
-  params.push(input.script_title);
+  // params.push(input.id, input.actor_id, input.script_title);
+  params.push(input.actor_id, input.script_title);
   db.query(sql, params, function (error, rows) {
     if (error) {
       console.log("Failed to add script ", error);
@@ -218,8 +233,9 @@ let addScriptScene = function (req, res) {
   let input = req.body;
 
   let sql =
-    "insert into scriptScenes (sceneNumber, sceneName, dialogue) values (?, ?, ?);";
+    "insert into scriptScenes (actor_id, sceneNumber, sceneName, dialogue) values (?, ?, ?, ?);";
   let params = [];
+  params.push(input.actor_id);
   params.push(input.sceneNumber);
   params.push(input.sceneName);
   params.push(input.dialogue);
@@ -257,7 +273,7 @@ let addActorsLibrary = function (req, res) {
 
 let updateActor = function (req, res) {
   console.log("updateActor", req.params.body);
-  let id = req.params.id;
+  // let id = req.params.id;
 
   let input = req.body;
   let newUserName = input.username;

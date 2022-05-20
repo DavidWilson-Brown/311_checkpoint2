@@ -17,7 +17,7 @@ export default function Quotable() {
       // If the API request failed, log the error to console and update state
       // so that the error will be reflected in the UI.
       console.error(error);
-      setData({ content: "Opps... Something went wrong" });
+      setData({ content: "Oops... Something went wrong" });
     }
   }
 
@@ -51,3 +51,4 @@ export default function Quotable() {
     </div>
   );
 }
+

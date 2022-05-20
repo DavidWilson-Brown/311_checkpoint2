@@ -1,9 +1,9 @@
 .bar {
-    background-color: lightgray;
-    color: gray;
+    background-color: black;
+    color: whitesmoke;
     padding-left: 25px;
     position: relative;
-    z-index: -1;
+    z-index: -2;
   }
   
   .text {
